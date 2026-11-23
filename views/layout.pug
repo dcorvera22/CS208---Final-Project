@@ -1,7 +1,55 @@
 doctype html
-html
+html(lang="en")
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{pageTitle} | Downtown Donuts
+    link(rel="stylesheet" href="/stylesheets/style.css")
   body
-    block content
+    header.site-header
+      .header-inner
+        a.brand-link(href="/" aria-label="Downtown Donuts Home")
+          svg(width="40" height="24" viewBox="0 0 120 70" role="img" aria-label="Downtown Donuts frosted half-donut logo")
+            path(d="M 10 62 A 50 50 0 0 1 110 62" fill="none" stroke="#F7C64A" stroke-width="5")
+            path(d="M 38 62 A 22 22 0 0 1 82 62" fill="none" stroke="#F7C64A" stroke-width="5")
+            line(x1="32" y1="36" x2="38" y2="32" stroke="#F7C64A" stroke-width="3")
+            line(x1="58" y1="22" x2="64" y2="24" stroke="#F7C64A" stroke-width="3")
+            line(x1="82" y1="32" x2="78" y2="38" stroke="#F7C64A" stroke-width="3")
+          span.brand-title Downtown Donuts
+
+        nav(aria-label="Primary Navigation")
+          ul.nav-list
+            li
+              a(href="/" aria-current=(activePage === 'home' ? 'page' : undefined)) Home
+            li
+              a(href="/menu" aria-current=(activePage === 'menu' ? 'page' : undefined)) Menu
+            li
+              a(href="/about" aria-current=(activePage === 'about' ? 'page' : undefined)) About Us
+            li
+              a(href="/comments" aria-current=(activePage === 'comments' ? 'page' : undefined)) Comments
+
+        .order-links(aria-label="Order Online")
+          a.order-btn(href="https://www.ubereats.com" target="_blank" rel="noopener noreferrer") UberEats
+          a.order-btn(href="https://www.doordash.com" target="_blank" rel="noopener noreferrer") DoorDash
+          a.order-btn(href="https://www.grubhub.com" target="_blank" rel="noopener noreferrer") GrubHub
+
+    main.main-content
+      block content
+
+    footer.site-footer
+      .footer-inner
+        div
+          .brand-title(style="color: #F7C64A; font-size: 2rem;") Downtown Donuts
+          p Family-Owned Since 1992
+          p 123 Main Street, Downtown
+        div
+          p
+            strong Hours
+          p Mon–Fri: 6AM–6PM
+          p Sat–Sun: 7AM–4PM
+        div
+          p
+            strong Contact &amp; Catering
+          p Phone: (555) 867-5309
+          p Email: catering@downtowndonuts.com
+          p.footer-muted www.downtowndonuts.com
