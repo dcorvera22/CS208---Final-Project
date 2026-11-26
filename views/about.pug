@@ -1,6 +1,38 @@
 extends layout
 
 block content
-  section.page-section
-    h1 About Us
-    p Family-owned since 1992 at 123 Main Street, Downtown, bringing neighbors together over fresh donuts and coffee.
+  section.page-section(aria-labelledby="about-heading")
+    .section-header
+      h1#about-heading About Us
+      p Family-owned since 1992, serving handcrafted donuts and fresh coffee in the heart of downtown.
+
+    .about-grid
+      article.story-block
+        h2 Three Decades on Main Street
+        p Since opening our doors in 1992, Downtown Donuts has focused on simple morning rituals done right: mixing dough before dawn, glazing classics like our Classic Glazed and Boston Cream by hand, and welcoming regulars by name at 123 Main Street.
+        p Whether you stop in for a quick cup of locally roasted drip coffee on your commute or pick up a dozen donut holes for a weekend table, our goal has stayed the same—warm hospitality, consistent craft, and a cozy neighborhood spot you can count on.
+
+      aside.info-card(aria-label="Location and Hours")
+        h2 Shop Details
+        p
+          strong Established:
+          |  1992
+        p
+          strong Location:
+          |  123 Main Street, Downtown
+        p
+          strong Monday–Friday:
+          |  6AM–6PM
+        p
+          strong Saturday–Sunday:
+          |  7AM–4PM
+        p
+          strong Phone:
+          |  (555) 867-5309
+        p
+          strong Catering:
+          |  catering@downtowndonuts.com
+        .action-group
+          a.order-btn(href="/menu") Browse Menu
+          a.secondary-link(href="/comments") Leave a Comment
+[cite: 1, 2, 5, 7, 9]
