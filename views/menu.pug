@@ -1,6 +1,187 @@
 extends layout
 
 block content
-  section.page-section
-    h1 Menu
-    p Signature donuts, donut holes, locally roasted coffee, and breakfast bites crafted fresh daily.
+  section.page-section(aria-labelledby="menu-heading")
+    .section-header
+      h1#menu-heading Menu
+      p Handcrafted donuts, locally roasted coffee, and morning bites—available in-shop or via UberEats, DoorDash, and GrubHub.
+      .order-links(aria-label="Order Online")
+        a.order-btn(href="https://www.ubereats.com" target="_blank" rel="noopener noreferrer") UberEats
+        a.order-btn(href="https://www.doordash.com" target="_blank" rel="noopener noreferrer") DoorDash
+        a.order-btn(href="https://www.grubhub.com" target="_blank" rel="noopener noreferrer") GrubHub
+
+    section.menu-category(aria-labelledby="donuts-heading")
+      h2#donuts-heading Signature Donuts
+      p.category-note Handcrafted fresh every morning.
+      .menu-grid
+        article.menu-card
+          .menu-item-top
+            h3 Classic Glazed
+            span.price $2.50
+          p Our legendary original - light, fluffy, and perfectly glazed.
+        article.menu-card
+          .menu-item-top
+            h3 Cinnamon Sugar Twist
+            span.price $2.75
+          p Hand-twisted and tossed in cinnamon sugar.
+        article.menu-card
+          .menu-item-top
+            h3 Strawberry Frosted
+            span.price $3.00
+          p Vanilla donut with strawberry glaze and rainbow sprinkles.
+        article.menu-card
+          .menu-item-top
+            h3 Blueberry Cake
+            span.price $3.25
+          p Dense cake donut bursting with fresh blueberries.
+        article.menu-card
+          .menu-item-top
+            h3 Chocolate Old Fashioned
+            span.price $3.25
+          p Sour cream donut with rich chocolate glaze.
+        article.menu-card
+          .menu-item-top
+            h3 Boston Cream
+            span.price $3.50
+          p Bavarian cream filling, dark chocolate ganache topping.
+        article.menu-card
+          .menu-item-top
+            h3 Lemon Poppy Seed
+            span.price $3.50
+          p Bright lemon glaze with poppy seed crunch.
+        article.menu-card
+          .menu-item-top
+            h3 Maple Bacon Bar
+            span.price $3.75
+          p Rich maple glaze topped with crispy applewood bacon.
+        article.menu-card
+          .menu-item-top
+            h3 Dulce de Leche
+            span.price $3.75
+          p Caramel cream filled, drizzled with dulce de leche.
+        article.menu-card
+          .menu-item-top
+            h3 PB &amp; J
+            span.price $3.75
+          p Peanut butter glaze with raspberry jam filling.
+
+    section.menu-category(aria-labelledby="holes-heading")
+      h2#holes-heading Donut Holes
+      p Glazed, Chocolate, or Cinnamon Sugar — mix and match flavors!
+      ul.simple-list
+        li
+          strong Half Dozen:
+          |  $4.50
+        li
+          strong Dozen:
+          |  $7.99
+
+    section.menu-category(aria-labelledby="coffee-heading")
+      h2#coffee-heading Coffee
+      p.category-note Locally roasted beans, always fresh.
+      .table-wrap
+        table.menu-table
+          caption Coffee sizes and prices
+          thead
+            tr
+              th(scope="col") Drink
+              th(scope="col") Description
+              th(scope="col") SM
+              th(scope="col") MD
+              th(scope="col") LG
+          tbody
+            tr
+              th(scope="row") Drip Coffee
+              td House blend or single origin
+              td $2.25
+              td $2.75
+              td $3.25
+            tr
+              th(scope="row") Cold Brew
+              td Slow-steeped 18 hours, smooth and bold
+              td $3.50
+              td $4.00
+              td $4.50
+            tr
+              th(scope="row") Espresso
+              td Double shot pulled to order
+              td $3.00
+              td —
+              td —
+            tr
+              th(scope="row") Americano
+              td Espresso and hot water, classic and clean
+              td $3.25
+              td $3.75
+              td $4.25
+            tr
+              th(scope="row") Latte
+              td Espresso with steamed milk, choice of milk
+              td $4.25
+              td $4.75
+              td $5.25
+            tr
+              th(scope="row") Cappuccino
+              td Equal parts espresso, steamed milk, foam
+              td $4.25
+              td $4.75
+              td $5.25
+            tr
+              th(scope="row") Mocha
+              td Espresso, chocolate, steamed milk, whipped cream
+              td $4.75
+              td $5.25
+              td $5.75
+            tr
+              th(scope="row") Vanilla Chai Latte
+              td Spiced chai with vanilla and steamed milk
+              td $4.50
+              td $5.00
+              td $5.50
+
+      .addons-box
+        h3 Add-Ons
+        p Extra shot +$0.75 · Flavored syrup +$0.50 · Oat/Almond/Soy milk +$0.60 · Whipped cream +$0.50 · Cold foam +$0.75
+
+    section.menu-category(aria-labelledby="other-drinks-heading")
+      h2#other-drinks-heading Other Drinks
+      ul.simple-list
+        li
+          strong Fresh Squeezed OJ:
+          |  $3.50
+        li
+          strong Hot Chocolate:
+          |  $3.75
+        li
+          strong Iced Tea (Sweet / Unsweet):
+          |  $2.50
+        li
+          strong Lemonade:
+          |  $2.75
+        li
+          strong Milk (Whole, Chocolate, Strawberry):
+          |  $2.00
+        li
+          strong Apple Cider (Seasonal):
+          |  $3.50
+
+    section.menu-category(aria-labelledby="breakfast-heading")
+      h2#breakfast-heading Breakfast Bites
+      ul.simple-list
+        li
+          strong Egg &amp; Cheese Croissant:
+          |  $5.50
+        li
+          strong Bacon Breakfast Sandwich:
+          |  $6.25
+        li
+          strong Avocado Toast:
+          |  $5.75
+        li
+          strong Yogurt Parfait:
+          |  $4.50
+
+    aside.callout-dark.catering-banner(aria-label="Catering Information")
+      h2 Catering Available
+      p Planning a morning meeting or gathering? Call (555) 867-5309 or email catering@downtowndonuts.com.
+[cite: 1, 2, 7, 9]
