@@ -98,7 +98,8 @@ select:focus-visible {
   gap: 0.5rem;
 }
 
-.order-btn {
+.order-btn,
+.order-btn:visited {
   display: inline-block;
   padding: 0.45rem 0.85rem;
   background-color: var(--color-saffron);
@@ -107,6 +108,14 @@ select:focus-visible {
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+.action-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .order-btn:hover {
@@ -357,4 +366,5 @@ select:focus-visible {
   .hero-title {
     font-size: 3rem;
   }
+}
 }
