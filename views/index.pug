@@ -1,11 +1,49 @@
 extends layout
 
 block content
-  section.page-section
-    .callout-dark
-      h1.brand-title(style="color: #F7C64A; font-size: 3.5rem; margin: 0 0 0.5rem;") Downtown Donuts
-      p Handcrafted donuts, locally roasted coffee, and morning staples serving downtown since 1992.
-      .order-links(style="margin-top: 1.25rem;")
-        a.order-btn(href="/menu") Explore Menu
-        a.order-btn(href="https://www.ubereats.com" target="_blank" rel="noopener noreferrer") Order on UberEats
-        a.order-btn(href="https://www.doordash.com" target="_blank" rel="noopener noreferrer") Order on DoorDash
+  section.page-section.hero-section(aria-labelledby="hero-heading")
+    .callout-dark.hero-grid
+      .hero-copy
+        p.eyebrow Family-Owned Since 1992
+        h1#hero-heading.brand-title.hero-title Downtown Donuts
+        p.hero-lead Handcrafted donuts, locally roasted coffee, and morning favorites made fresh every day at 123 Main Street, Downtown.
+        .action-group
+          a.order-btn(href="/menu") View Full Menu
+          a.secondary-link(href="/about") Our Story
+        .order-links(aria-label="Order Online")
+          a.order-btn(href="https://www.ubereats.com" target="_blank" rel="noopener noreferrer") UberEats
+          a.order-btn(href="https://www.doordash.com" target="_blank" rel="noopener noreferrer") DoorDash
+          a.order-btn(href="https://www.grubhub.com" target="_blank" rel="noopener noreferrer") GrubHub
+      .hero-meta(aria-label="Shop Hours and Location")
+        h2.card-heading Visit Downtown
+        p
+          strong Address:
+          |  123 Main Street, Downtown
+        p
+          strong Mon–Fri:
+          |  6AM–6PM
+        p
+          strong Sat–Sun:
+          |  7AM–4PM
+        p
+          strong Phone:
+          |  (555) 867-5309
+
+  section.page-section.highlights-section(aria-labelledby="highlights-heading")
+    .section-header
+      h2#highlights-heading Fresh From the Morning Batch
+      p Classic recipes, bold roasts, and easy delivery options across town.
+    .card-grid
+      article.info-card
+        h3 Signature Donuts
+        p Classic Glazed ($2.50), Maple Bacon Bar ($3.75), Boston Cream ($3.50), Lemon Poppy Seed ($3.50), and more.
+      article.info-card
+        h3 Locally Roasted Coffee
+        p Drip Coffee, 18-hour Cold Brew, Espresso, Lattes, Cappuccinos, Mochas, and Vanilla Chai in SM, MD, and LG.
+      article.info-card
+        h3 Community Voices
+        p Stop by for morning coffee or share your favorite Downtown Donuts memory on our comments page.
+        a.inline-link(href="/comments") Read &amp; Post Comments
+
+  hr.saffron-divider
+[cite: 1, 2, 5, 7, 9]
