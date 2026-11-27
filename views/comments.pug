@@ -1,6 +1,67 @@
 extends layout
 
 block content
-  section.page-section
-    h1 Customer Comments
-    p Share your favorite donut or morning coffee memory with the Downtown Donuts community.
+  section.page-section(aria-labelledby="comments-heading")
+    .section-header
+      h1#comments-heading Customer Comments
+      p Share your favorite donut or morning coffee memory with the Downtown Donuts community.
+
+    .comments-layout
+      .comment-form-card
+        h2#form-heading Leave a Comment
+        p.form-note All fields are required. Maximum 500 characters per comment.
+
+        #form-feedback.feedback-banner(role="alert" aria-live="polite" hidden)
+
+        form#comment-form(method="POST" action="/api/comments" novalidate)
+          .form-group
+            label(for="author_name") Your Name
+            input#author_name(
+              type="text"
+              name="author_name"
+              maxlength="100"
+              placeholder="e.g., Jordan M."
+              required
+            )
+
+          .form-group
+            label(for="comment_text") Your Comment
+            textarea#comment_text(
+              name="comment_text"
+              rows="4"
+              placeholder="Tell us what you ordered or your favorite Downtown Donuts memory..."
+              required
+            )
+            .char-counter-row
+              span#char-count(aria-live="polite") 0 / 500 characters
+
+          button#submit-comment-btn.order-btn(type="submit") Post Comment
+
+      .comments-feed(aria-labelledby="feed-heading")
+        .feed-header
+          h2#feed-heading Recent Guest Notes
+          span#total-count.count-badge #{totalCount} #{totalCount === 1 ? 'comment' : 'comments'}
+
+        if loadError
+          .feedback-banner.is-error(role="alert") #{loadError}
+
+        #comments-list.comments-list
+          if comments && comments.length > 0
+            each item in comments
+              article.comment-card
+                .comment-meta
+                  strong.comment-author !{item.author_name}
+                  time.comment-time #{item.formatted_date}
+                p.comment-body !{item.comment_text}
+          else if !loadError
+            p#empty-state.empty-state No comments yet—be the first to share your favorite donut!
+
+        nav#pagination-controls.pagination-bar(
+          aria-label="Comments pagination"
+          hidden=(totalPages <= 1)
+        )
+          button#prev-page-btn.page-btn(type="button" disabled=(currentPage <= 1)) Previous
+          span#page-indicator.page-indicator Page #{currentPage} of #{totalPages}
+          button#next-page-btn.page-btn(type="button" disabled=(currentPage >= totalPages)) Next
+
+  script(src="/javascripts/comments.js" defer)
