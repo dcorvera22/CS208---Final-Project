@@ -1,11 +1,18 @@
-# CS208 Full Stack Final Project
+# Downtown Donuts — CS208 Final Project
 
-## Documentation
+My full-stack web application for **Downtown Donuts**, built with **Express.js**, **MariaDB** (`mysql2`), **Pug**, and **hand-written CSS** 
 
-- Running the example project is documented [here](docs/example_project.md)
-- An example README is provided [here](docs/README_example.md)
+## Setup Instructions
 
-Students must **replace** this README with a README that is specific to your
-project. **IMPORTANT**: If you do not complete the README, your project will not
-be graded, and you will receive a zero. The TA will not guess how to set up,
-configure, and run your project.
+Follow these steps to run the project locally:
+
+1. **Setup MariaDB and Installing Dependencies**
+   npm install
+   ./setup_scripts/install_db.sh
+   sudo service mariadb start
+   sudo mysql -u root -p < ./setup_scripts/create_comments_table.sql
+   
+3. **Start Server**
+   npm start
+
+**Design Decisions**
